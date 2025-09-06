@@ -1,1 +1,2 @@
-/home/serdigital64/sd64/repos/terraform-local-hello-world/src/locals.tf
+locals {
+}

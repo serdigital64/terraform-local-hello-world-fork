@@ -1,1 +1,9 @@
-/home/serdigital64/sd64/repos/terraform-local-hello-world/src/versions.tf
+terraform {
+  required_version = ">= 1.0"
+  required_providers {
+    local = {
+      source  = "hashicorp/local"
+      version = ">=1.0"
+    }
+  }
+}
