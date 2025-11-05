@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# * template-task: 1.7.0
+# template-task: 1.7.0
 #######################################
 # Copyright SerDigital64 - https://github.com/serdigital64
 #
@@ -15,7 +15,7 @@
 
 # shellcheck source=bin/dev-set
 source ./bin/dev-set || { echo 'dev-set:Error: unable to load dev environment' 2>&1 && exit 1; }
-# shellcheck source-path=lib/bl64
+# shellcheck source-path=/opt/bl64
 source "${DEV_LIB_BASHLIB64_TARGET}/bashlib64-module-txt.bash" &&
   source "${DEV_LIB_BASHLIB64_TARGET}/bashlib64-module-fmt.bash" &&
   source "${DEV_LIB_BASHLIB64_TARGET}/bashlib64-module-fs.bash" &&
@@ -59,7 +59,7 @@ function dev_initialize() {
 [[ -n "$DEV_CICD_DEBUG" ]] && bl64_dbg_all_enable
 bl64_lib_script_version_set '2.1.1'
 bl64_msg_help_about_set 'Create profile directory structure'
-bl64_msg_all_enable_verbose && dev_initialize || exit $?
+bl64_msg_set_format "$DEV_VERBOSE" && bl64_msg_all_enable_verbose && dev_initialize || exit $?
 
 bl64_msg_show_batch_start "$BL64_SCRIPT_ID"
 dev_create

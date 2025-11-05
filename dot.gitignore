@@ -23,5 +23,8 @@
 # Project specific exclusions
 #
 
+# OpenTofu / Staging
+var/opentofu/
+
 # Keep placeholder for empty directories
 !/**/.gitkeep

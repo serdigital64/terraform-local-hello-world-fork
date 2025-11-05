@@ -1,10 +1,7 @@
 act
-bash
 git
 github
 gitleaks
-iac64
 opentofu
-testmansh
 tflint
 tfsec

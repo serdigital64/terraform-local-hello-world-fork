@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Simple hello-world
+OpenTofu hello world using the local provider
 
 ## License
 

@@ -1,3 +1,3 @@
-hello_world__file_path = "tmp"
-hello_world__file_name = "test.txt"
-hello_world__content   = "hello-world"
+module__file_path = "tmp"
+module__file_name = "test.txt"
+module__content   = "hello-world"

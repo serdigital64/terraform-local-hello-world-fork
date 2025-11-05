@@ -1,5 +1,5 @@
 ---
-# Template: 1.2.0
+# template: 1.0.0
 name: "Test / OpenTofu"
 
 env:
@@ -16,14 +16,23 @@ on:
       - "feature/**"
     paths:
       - "src/**"
+      - "test/**"
 
 jobs:
-  test:
+  test-opentofu:
     runs-on: "ubuntu-latest"
     steps:
 
       - name: "Check out repository code"
         uses: "actions/checkout@main"
+
+      - name: "Cache local tools"
+        uses: "actions/cache@v4"
+        with:
+          path: ./lib
+          key: ${{ runner.os }}-lib-cache
+          restore-keys: |
+            ${{ runner.os }}-lib-cache
 
       - name: "Prepare environment"
         run: "./bin/dev-lib-base"
@@ -34,6 +43,6 @@ jobs:
       - name: "Prepare Source"
         run: "./bin/dev-build-opentofu"
 
-      - name: "Run Test"
+      - name: "Run tests"
         run: "./bin/dev-test-opentofu"
 ...
